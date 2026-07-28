@@ -9,3 +9,4 @@ venv/
 *.bin
 data/raw/
 results/generated/
+!results/refusal_direction.pt
