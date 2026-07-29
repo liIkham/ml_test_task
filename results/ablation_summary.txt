@@ -1,0 +1,3 @@
+Ablation harmful refusal rate before: 0.9
+Ablation harmful refusal rate after: 0.8
+Mean next-token KL on harmless prompts: 0.004353655106388033

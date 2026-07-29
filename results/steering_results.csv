@@ -1,0 +1,4 @@
+condition,harmful_refusal_rate,harmless_refusal_rate
+baseline,0.9,0.1
+steering_+20,1.0,0.6
+steering_-20,0.3,0.0
