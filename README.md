@@ -57,11 +57,16 @@ jupyter lab notebooks/experiment.ipynb
 - harmful refusal rate при steering: `+20 → 1.0`, `-20 → 0.3`;
 - harmless refusal rate при steering: `+20 → 0.6`, `-20 → 0.0`.
 
-Результаты perplexity будут заполнены после запуска соответствующих ячеек:
+В совокупности результаты показывают, что найденное направление связано с поведением отказа: steering в положительную сторону усиливает отказы, а в отрицательную — снижает их. Эффект аблитерации оказался слабее.
 
-- baseline perplexity: `pending`;
-- ablated perplexity: `pending`;
-- relative change: `pending`.
+Perplexity на 32 нейтральных фрагментах WikiText:
+
+- baseline perplexity: `16.7509`;
+- ablated perplexity: `16.7468`;
+- relative change: `-0.02%`;
+- число предсказываемых токенов: `4037`.
+
+Perplexity практически не изменилась. На этой выборке аблитерация не показала заметной деградации по данной метрике. Небольшое снижение на `0.02%` не следует интерпретировать как улучшение модели, поскольку разница слишком мала.
 
 ## Ограничения
 
@@ -70,6 +75,7 @@ jupyter lab notebooks/experiment.ipynb
 - общий harmless mean в проверке split stability;
 - эвристический refusal classifier;
 - next-token KL не заменяет sequence-level оценку;
+- perplexity измерена только на 32 фрагментах WikiText, поэтому вывод об отсутствии деградации ограничен этой небольшой выборкой;
 - систематический alpha sweep не проводился;
 - результаты относятся только к одной модели.
 
